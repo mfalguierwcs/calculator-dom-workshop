@@ -1,21 +1,23 @@
 const calcultorBtn = document.getElementById("calculator"); // cible mon bouton d'action
+const resultArea = document.getElementById("result") // zone cible pour afficher mon résultat
 
 calcultorBtn.addEventListener("click", function() {
     let firstValue = document.getElementById("number1").value;
     let secondValue = document.getElementById("number2").value;
     const operator = document.getElementById("operator").value;
+    resultArea.classList.remove("error") // si une classe error est présente sur le div resultArea je la suprrime 
     
     if (firstValue === "" || secondValue === "") { // si nos valeurs number 1 et number 2 sont vides 
+        resultArea.classList.add("error");
+        resultArea.innerHTML = "Merci de saisir 2 nombres pour faire le calcule";
         return // on sort de la fonction
     }
 
+    // conversion des valeurs en chaine de caractère en nombre
     firstValue = parseInt(firstValue)
     secondValue = parseInt(secondValue)
     
-    const resultArea = document.getElementById("result") // zone cible pour afficher mon résultat
-    
     let result // je crée cette variable qui va me permettre de stocker le resultat de l'opération
-    resultArea.classList.remove("error") // si une classe error est présente sur le div resultArea je la suprrime 
     
     // selon ce que j'ai sélectionné dans mon select je fais l'opération associée
     switch (operator) {
