@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+input, select {
+    width: 200px;
+}
+
+label {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+#result {
+    padding: 1rem;
+    border: 2px dashed grey;
+}
+
+#result.error {
+    color: red;
+    border: 1px dashed red;
+}
